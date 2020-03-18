@@ -2,11 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid-19 Apps</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-dark bg-primary">
+        <span class="navbar-brand mb-0 h1">COVID-19 Monitor Apps</span>
+    </nav>
+</header>
+<main class="container-fluid">
+    <div class="row">
+        <div class="cases-container col-sm-12 col-md-12 col-lg-12 ">
+            <div class="cases-item__confirm card">
+                <div id="caseConfirmSpinner" class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <span id="caseConfirmCount" class="cases-item__count"></span>
+                <span class="cases-item__title">Confirmed</span>
+            </div>
+            <div class="cases-item__alive card">
+                <div id="caseAliveSpinner" class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <span id="caseAliveCount" class="cases-item__count"></span>
+                <span class="cases-item__title">Recovered</span>
 
+            </div>
+            <div class="cases-item__dead card">
+                <div id="caseDeathSpinner" class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <span id="caseDeathCount" class="cases-item__count"></span>
+                <span class="cases-item__title">Deaths</span>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="countriesContainer" class="countries-container col-sm-12 col-md-12 col-lg-12">
+            <div id="countriesSpinner" class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="node_modules/numeral/min/numeral.min.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./assets/script/data/data-source.js"></script>
 <script src="./assets/script/view/main.js"></script>
