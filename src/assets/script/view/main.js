@@ -1,3 +1,7 @@
+import $ from "jquery";
+import DataSource from "../data/data-source";
+import * as numeral from "numeral";
+
 const main = () => {
 
     const getAllCases = async () => {
@@ -34,7 +38,6 @@ const main = () => {
     const renderCountries = (countries) => {
         $("#countriesSpinner").hide();
         countries.forEach(country => {
-            console.log(country);
             const template = `
                 <div class="countries-item card">
                     <span class="countries-item__title">${country.country}</span>
@@ -52,3 +55,5 @@ const main = () => {
     getAllCases();
     getAllCountries()
 };
+
+export default main;
